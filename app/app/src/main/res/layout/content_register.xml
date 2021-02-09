@@ -19,7 +19,8 @@
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="88dp" />
+        tools:layout_editor_absoluteY="88dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/passwordText"
@@ -76,5 +77,6 @@
         android:onClick="reguser"
         android:text="Insert"
         tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="382dp" />
+        tools:layout_editor_absoluteY="382dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

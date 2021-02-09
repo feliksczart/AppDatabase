@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -23,7 +24,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String reg_url="https://localhost/project/register.php";
+        String reg_url="https://localhost:80/project/register.php";
         String method = params[0];
         if(method.equals("register")){
             String name = params[1];
@@ -49,6 +50,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 os.close();
+                InputStream is = httpURLConnection.getInputStream();
+                is.close();
                 return "Registration success";
 
             } catch (MalformedURLException e) {

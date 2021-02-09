@@ -2,18 +2,18 @@
 
 require "init.php";
 
-$name="feliks";
-$password="feliks123";
-$contact="000000";
-$country="Poland";
+$u_name=$_POST["name"];
+$u_password=$_POST["password"];
+$u_contact=$_POST["contact"];
+$u_country=$_POST["country"];
 
-$sql_query="insert into users values('$name','$password','$contact','$country');";
+$sql_query="insert into users values('$u_name','$u_password','$u_contact','$u_country');";
 
 if(mysqli_query($connection,$sql_query)){
-    echo "Data inserted";
+    //echo "Data inserted";
 }
 else{
-    echo "Insertion error";
+    //echo "Insertion error";
 }
 
 ?>
