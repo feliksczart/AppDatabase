@@ -24,7 +24,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String reg_url="https://localhost:80/project/register.php";
+        String reg_url="https://192.168.0.10/project/register.php";
         String method = params[0];
         if(method.equals("register")){
             String name = params[1];
@@ -34,6 +34,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
 
             try {
                 URL url = new URL(reg_url);
+                HttpsTrustManager.allowAllSSL();
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
